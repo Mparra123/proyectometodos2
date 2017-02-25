@@ -46,7 +46,7 @@
            Cédula: <input type="text" name="idNumber" required="required" /> <br/>
            Correo electrónico: <input type="text" name="emailAddress" required="required" /> <br/>
            Teléfono:<input type="text" name="phoneNumber" required="required" /> <br/>
-           <input type="submit" value="Register"/>
+           <input type="submit" value="Registrar"/>
         </form>
     </body>
 </html>

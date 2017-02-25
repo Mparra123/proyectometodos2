@@ -17,11 +17,11 @@ if($_SESSION['role'] == 3){
   $bool = true;
 }
  ?>
- 
+
 <html>
     <head>
         <title>Perfil</title>
-         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
       <nav>
