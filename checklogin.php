@@ -10,6 +10,11 @@
     $table_users = "";
     $table_password = "";
     $table_role = "";
+    $table_name = "";
+    $table_lastName = "";
+    $table_idNumber = "";
+    $table_emailAddress = "";
+    $table_phoneNumber = "";
     if($exists > 0) //IF there are no returning rows or no existing username
     {
        while($row = mysql_fetch_assoc($query)) // display all rows from query
@@ -17,6 +22,11 @@
           $table_users = $row['Username']; // the first username row is passed on to $table_users, and so on until the query is finished
           $table_password = $row['Password']; // the first password row is passed on to $table_password, and so on until the query is finished
           $table_role = $row['Role'];
+          $table_name = $row['Name'];
+          $table_lastName = $row['LastName'];
+          $table_idNumber = $row['IdNumber'];
+          $table_emailAddress = $row['EmailAddress'];
+          $table_phoneNumber = $row['PhoneNumber'];
        }
        if(($username == $table_users) && ($password == $table_password))// checks if there are any matching fields
        {
@@ -24,6 +34,12 @@
           {
              $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
              $_SESSION['role'] = $table_role;
+             $_SESSION['name'] =   $table_name;
+             $_SESSION['lastName'] = $table_lastName;
+             $_SESSION['idNumber'] = $table_idNumber;
+             $_SESSION['emailAddress'] = $table_emailAddress;
+             $_SESSION['phoneNumber'] = $table_phoneNumber;
+
              header("location: profile.php"); // redirects the user to the authenticated home page
           }
        }

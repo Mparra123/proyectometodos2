@@ -10,10 +10,11 @@
     else{
        header("location: login.php"); // redirects if user is not logged in
     }
-    if ($_SESSION['role'] == 3) {
+    $role = 0;
+    $role = $_SESSION['role'];
+    if ($role == 3) {
        header("location: profile.php");
     }
-    $user = $_SESSION['user']; //assigns user value
     ?>
 
     <body>
@@ -33,9 +34,13 @@
            Last name: <input type="text" name="lastName" required="required" /> <br/>
            Role:
            <select name="role" required="required">
-           <option value=1 selected>Administrator</option>
-           <option value=2>Team leader</option>
-           <option value=3>User</option>
+           <option value=3  selected>User</option>
+           <?php
+           if($role == 1){
+             echo '<option value=1>Administrator</option>';
+             echo '<option value=2>Team leader</option>';
+           }
+            ?>
            </select><br/>
            ID number: <input type="text" name="idNumber" required="required" /> <br/>
            Email address: <input type="text" name="emailAddress" required="required" /> <br/>
