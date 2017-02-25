@@ -17,17 +17,16 @@ if($_SESSION['role'] == 3){
   $bool = true;
 }
  ?>
-
-
+ 
 <html>
     <head>
         <title>Perfil</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
+         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
       <nav>
         <ul>
-           <li><a href="profile.php" selected>Perfil</a></li>
+           <li><a href="profile.php">Perfil</a></li>
            <?php
            if($bool == false){
             echo '<li><a href="register.php" selected>Registrar usuario</a></li>';
@@ -54,9 +53,9 @@ if($_SESSION['role'] == 3){
     </p>
     <p>Nombre: <?php Print "$var3" ?></p>
     <p>Apellido: <?php Print "$var4" ?></p>
-    <p>Cedula: <?php Print "$var5" ?></p>
-    <p>Correo electronico: <?php Print "$var6" ?></p>
-    <p>Telefono: <?php Print "$var7" ?></p>
+    <p>Cédula: <?php Print "$var5" ?></p>
+    <p>Correo electrónico: <?php Print "$var6" ?></p>
+    <p>Teléfono: <?php Print "$var7" ?></p>
 
   </body>
 </html>
