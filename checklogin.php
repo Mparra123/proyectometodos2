@@ -24,7 +24,7 @@
           {
              $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
              $_SESSION['role'] = $table_role;
-             header("location: home.php"); // redirects the user to the authenticated home page
+             header("location: profile.php"); // redirects the user to the authenticated home page
           }
        }
        else

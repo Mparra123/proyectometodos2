@@ -2,8 +2,29 @@
     <head>
         <title>My first PHP Website</title>
     </head>
+
+    <?php
+    session_start(); //starts the session
+    if($_SESSION['user']){ // checks if the user is logged in
+    }
+    else{
+       header("location: login.php"); // redirects if user is not logged in
+    }
+    if ($_SESSION['role'] == 3) {
+       header("location: profile.php");
+    }
+    $user = $_SESSION['user']; //assigns user value
+    ?>
+
     <body>
-        <h2>Registration Page</h2>
+      <nav>
+        <ul>
+           <li><a href="profile.php">Perfil</a></li>
+           <li><a href="register.php" selected>Registrar usuario</a></li>
+           <li><a href="logout.php">Salir</a></li>
+         </ul>
+      </nav>
+        <h2>Registrar usuario</h2>
 
         <form action="checkregister.php" method="POST">
            Username: <input type="text" name="username" required="required" /> <br/>
@@ -21,6 +42,6 @@
            Phone number:<input type="text" name="phoneNumber" required="required" /> <br/>
            <input type="submit" value="Register"/>
         </form>
-        <a href="index.php">Click here to go back.<br/><br/>
+        <a href="profile.php">Click here to go back.<br/><br/>
     </body>
 </html>
